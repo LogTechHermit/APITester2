@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Customer List</title>
+    <link rel="stylesheet" href="/static/css/site.css" />
+    <link rel="stylesheet" href="/static/css/customers.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Customers</h1>
+      <div class="subtle">Customer directory</div>
+      <p><a href="/import">Import or update customers from CSV</a></p>
+
+      <section class="panel" aria-labelledby="form-title">
+        <h2 id="form-title">Add customer</h2>
+        <form id="customer-form">
+          <label>Customer Number
+            <input name="customer_number" maxlength="50" required />
+          </label>
+          <label>Customer Name
+            <input name="customer_name" maxlength="200" required />
+          </label>
+          <label>Customer Type
+            <input name="customer_type" maxlength="100" required />
+          </label>
+          <label>Customer Category
+            <input name="customer_category" maxlength="100" required />
+          </label>
+          <div class="form-actions">
+            <button id="save-button" type="submit">Add customer</button>
+            <button id="cancel-button" class="secondary" type="button" hidden>Cancel edit</button>
+          </div>
+        </form>
+        <p id="message" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="panel" aria-labelledby="list-title">
+        <div class="table-heading">
+          <h2 id="list-title">Customer feed</h2>
+          <span id="feed-status" aria-live="polite">Loading…</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr class="grid-actions">
+                <th colspan="5"><a class="button-link" href="/api/customers/export">Download customer data CSV</a></th>
+              </tr>
+              <tr>
+                <th>Customer Number</th><th>Customer Name</th>
+                <th>Customer Type</th><th>Customer Category</th><th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="customer-rows"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script src="/static/js/customers.js" defer></script>
+  </body>
+</html>

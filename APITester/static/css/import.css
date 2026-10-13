@@ -1,0 +1,10 @@
+main { max-width: 900px; }
+.subtle { color: #5b6472; font-size: 0.9rem; }
+label { display: grid; gap: 0.5rem; margin: 1rem 0; font-weight: 600; }
+input { font: inherit; }
+button { padding: 0.6rem 0.9rem; }
+code, pre { background: #f2f4f7; }
+code { padding: 0.1rem 0.25rem; }
+pre { overflow-x: auto; padding: 0.8rem; border-radius: 6px; }
+#summary { margin: 1rem 0; font-weight: 600; }
+th, td { padding: 0.65rem; vertical-align: top; }

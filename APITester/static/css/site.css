@@ -1,0 +1,40 @@
+:root {
+  color-scheme: light;
+  font-family: system-ui, sans-serif;
+  color: #1f2937;
+  background: #f3f5f8;
+}
+
+body { margin: 0; padding: 2rem 1rem; }
+main { margin: 0 auto; }
+h1 { margin: 0 0 0.25rem; }
+.panel {
+  margin-top: 1.25rem;
+  padding: 1.25rem;
+  border: 1px solid #dce1e8;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 2px 8px #1f29370a;
+}
+button, .button-link {
+  display: inline-block;
+  padding: 0.55rem 0.8rem;
+  border: 0;
+  border-radius: 6px;
+  color: white;
+  background: #2259a6;
+  font: inherit;
+  cursor: pointer;
+}
+.button-link { text-decoration: none; }
+button.secondary { color: #243247; background: #e7ebf1; }
+button.danger { color: #8b1e1e; background: #fae7e7; }
+button:disabled { opacity: 0.6; cursor: wait; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; text-align: left; }
+th, td { padding: 0.8rem 0.65rem; border-bottom: 1px solid #e5e8ed; }
+th { color: #4a5565; font-size: 0.85rem; }
+.error { color: #9b2525; }
+.success { color: #176b38; }
+
+@media (max-width: 620px) { body { padding: 1rem 0.6rem; } }

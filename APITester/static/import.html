@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Import Customers</title>
+    <link rel="stylesheet" href="/static/css/site.css" />
+    <link rel="stylesheet" href="/static/css/import.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Import customers</h1>
+      <p class="subtle">Apply Create, Update, or Delete actions from a CSV file.</p>
+      <p><a href="/">Back to customer list</a></p>
+
+      <section class="panel">
+        <h2>CSV format</h2>
+        <p>Use a UTF-8 CSV with this exact header row. Actions are case-insensitive.</p>
+        <pre>Action,Customer Number,Customer Name,Customer Type,Customer Category</pre>
+        <ul>
+          <li><strong>Create</strong>: all four customer fields are required. Existing numbers are reported as errors.</li>
+          <li><strong>Update</strong>: customer number and all three customer details are required; the customer must exist.</li>
+          <li><strong>Delete</strong>: only customer number is required; the other fields may be blank.</li>
+        </ul>
+        <p>Rows are applied independently. Successful rows stay saved even if other rows have errors. Maximum file size: 10 MB.</p>
+
+        <form id="import-form">
+          <label for="csv-file">Choose CSV file</label>
+          <input id="csv-file" name="file" type="file" accept=".csv,text/csv" required />
+          <p><button id="upload-button" type="submit">Import CSV</button></p>
+        </form>
+      </section>
+
+      <section id="results-panel" class="panel" hidden aria-live="polite">
+        <h2>Import results</h2>
+        <p id="summary"></p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>CSV row</th><th>Action</th><th>Customer Number</th><th>Result</th></tr>
+            </thead>
+            <tbody id="result-rows"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script src="/static/js/import.js" defer></script>
+  </body>
+</html>
